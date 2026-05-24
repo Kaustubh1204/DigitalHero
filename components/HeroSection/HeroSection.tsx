@@ -112,20 +112,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Brand pillars navigation (vertical stack in bottom-right) */}
-      <div className={`${styles.pillarsContainer} anim-slide-up d-500`}>
-        {[
-          { num: "01", label: "Strategy & Research", link: "#process-discover" },
-          { num: "02", label: "UI / UX", link: "#process-design" },
-          { num: "03", label: "Engineering", link: "#process-build" },
-          { num: "04", label: "Deployment & Growth", link: "#process-launch" },
-        ].map((pillar) => (
-          <a key={pillar.num} href={pillar.link} className={styles.pillarLink}>
-            <span className={styles.pillarNum}>{pillar.num}</span>
-            <span className={styles.pillarLabel}>{pillar.label}</span>
-          </a>
-        ))}
-      </div>
+
 
       <div className="absolute bottom-0 left-0 w-full z-10">
         <TechMarquee />
