@@ -67,9 +67,9 @@ export default function FAQSection() {
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
                 className={cn(
-                  "group relative flex flex-col items-start p-6 text-left transition-all duration-200 border-[0.5px] rounded-xl cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[hsl(var(--primary))]",
+                  "group relative flex flex-col items-start p-6 text-left transition-all duration-200 border-[0.5px] rounded-xl cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--text)]",
                   isOpen 
-                    ? "bg-[hsl(var(--secondary))] border-[hsl(var(--primary))]" 
+                    ? "bg-[hsl(var(--secondary))] border-[var(--text)]" 
                     : "bg-transparent border-[var(--border-sub)] hover:border-[var(--text-sec)] hover:bg-[hsl(var(--secondary)/0.3)]"
                 )}
               >
@@ -80,11 +80,11 @@ export default function FAQSection() {
                   </span>
                   <div className={cn(
                     "w-5 h-5 rounded-full border-[0.5px] border-[var(--border-sub)] flex items-center justify-center transition-all duration-300",
-                    isOpen ? "rotate-45 border-[hsl(var(--primary))]" : "rotate-0 group-hover:border-[var(--text-sec)]"
+                    isOpen ? "rotate-45 border-[var(--text)]" : "rotate-0 group-hover:border-[var(--text-sec)]"
                   )}>
                     <Plus className={cn(
                       "w-3 h-3 transition-colors",
-                      isOpen ? "text-[hsl(var(--primary))]" : "text-[var(--text)]"
+                      isOpen ? "text-[var(--text)]" : "text-[var(--text)]"
                     )} />
                   </div>
                 </div>
