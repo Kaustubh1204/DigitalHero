@@ -1,10 +1,8 @@
 .marqueeContainer {
   width: 100%;
   overflow: hidden;
-  background-color: var(--bg);
+  background-color: transparent;
   padding: 15px 0;
-  border-top: 1px solid var(--border-sub);
-  border-bottom: 1px solid var(--border-sub);
   position: relative;
   z-index: 5;
 }

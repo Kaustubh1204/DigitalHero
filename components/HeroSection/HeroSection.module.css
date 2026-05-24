@@ -30,61 +30,41 @@
 .videoLayer {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
-}
-
-.videoFrame {
-  position: relative;
-  /* Reduced height for a more compact look */
-  height: 75vh;
-  aspect-ratio: 9 / 16;
-  max-width: 60vw;
-  /* Shifted right and slightly down for a dynamic, refined look */
-  transform: translate(10%, 20%);
-
-  /* Rectangular shape with soft edge blending */
-  overflow: hidden;
-
-  /* Strong, focused oval fade effect */
-  -webkit-mask-image: 
-    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
-  mask-image: 
-    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
 }
 
 .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
   display: block;
   mix-blend-mode: normal;
   opacity: 1;
-  filter: none;
+  filter: grayscale(100%);
+  transform: scale(1.25) translateZ(0);
+  transform-origin: center center;
+  will-change: transform;
   transition: all 0.3s ease;
 }
 
-:global(.dark) .videoFrame {
-  /* Strong, focused oval fade effect for dark mode with extra top fade */
-  -webkit-mask-image: 
-    linear-gradient(to bottom, transparent, black 15%),
-    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
-  mask-image: 
-    linear-gradient(to bottom, transparent, black 15%),
-    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+.bwOverlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: grayscale(100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 :global(.dark) .video {
-  mix-blend-mode: lighten;
-  opacity: 0.65;
-  filter: contrast(1.1) brightness(1) grayscale(0);
-  transition: all 0.3s ease;
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: grayscale(100%);
+  transform: scale(1.25) translateZ(0);
+  transform-origin: center center;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -200,9 +180,62 @@
   border-color: var(--text);
 }
 
+/* ── BRAND PILLARS NAVIGATION ── */
+.pillarsContainer {
+  position: absolute;
+  bottom: 120px;
+  right: var(--pad-h);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 10;
+  pointer-events: all;
+  transition: all 0.4s ease;
+}
+
+.pillarLink {
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  opacity: 0.65;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+/* Dim other items when hovering container */
+.pillarsContainer:hover .pillarLink {
+  opacity: 0.25;
+}
+
+.pillarsContainer .pillarLink:hover {
+  opacity: 1;
+  transform: translateX(-12px); /* shift left slightly for alignment accent */
+}
+
+.pillarNum {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.65rem, 1vw, 0.75rem);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+.pillarLabel {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 2.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE
-═══════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .contentLayer {
     flex-direction: column;
@@ -225,5 +258,20 @@
 
   .ctas {
     justify-content: center;
+  }
+
+  .pillarsContainer {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .pillarsContainer .pillarLink:hover {
+    transform: translateY(-4px); /* shift up on mobile instead of horizontal shift */
   }
 }
