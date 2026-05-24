@@ -8,6 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import TextBlockAnimation from "@/components/ui/text-block-animation";
 import ParallaxHeading from "@/components/ui/parallax-heading";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
+import SEOKeywordsMarquee from "@/components/ui/seo-keywords-marquee";
 import "@/components/landing-reveal/LandingReveal.css";
 
 
@@ -228,6 +229,7 @@ export default function Home() {
       </section>
 
       <FAQSection />
+      <SEOKeywordsMarquee />
       <Footer />
     </main>
   );
