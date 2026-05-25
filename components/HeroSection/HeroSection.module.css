@@ -248,16 +248,24 @@
   .rightSide {
     flex: none;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    width: 100%;
     max-width: 100%;
   }
 
   .brandGiant {
     font-size: clamp(48px, 10vw, 80px);
+    transform: translateX(0); /* Reset transform on mobile */
   }
 
   .ctas {
     justify-content: center;
+    gap: 20px; /* Increase gap for touch */
+  }
+  
+  .ctaPrimary, .ctaGhost {
+    padding: 14px 28px; /* Bigger tap target */
   }
 
   .pillarsContainer {
@@ -274,4 +282,64 @@
   .pillarsContainer .pillarLink:hover {
     transform: translateY(-4px); /* shift up on mobile instead of horizontal shift */
   }
+}
+
+@media (max-width: 640px) {
+  .contentLayer {
+    gap: 40px;
+  }
+  
+  .hLine {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO OVERRIDES (PERMANENT)
+   High-contrast silver/gray palette over B&W video
+   These colors stay the same regardless of light/dark mode.
+   ═══════════════════════════════════════════════════════ */
+.brandGiant,
+.hLine,
+.hLineLight {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ctaPrimary,
+.ctaGhost {
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(4px);
+}
+
+.ctaPrimary:hover,
+.ctaGhost:hover {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.pillarLink {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.pillarNum {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.pillarLabel {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Force TechMarquee inside Hero to be silver/gray */
+.section :global(.marqueeItem) {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.section :global(.dot) {
+  color: rgba(255, 255, 255, 0.5) !important;
 }

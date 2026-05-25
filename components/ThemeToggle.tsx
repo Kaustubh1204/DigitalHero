@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ isHero = false }: { isHero?: boolean }) {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -26,18 +26,23 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove("dark");
     }
   };
+  
+  // Icon styling adjusts based on whether it is inside the hero section and currently rendering the silver style
+  const iconClass = isHero ? "text-[rgba(255,255,255,0.95)]" : (theme === "light" ? "text-black" : "text-white");
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors focus:outline-none"
-      aria-label="Toggle theme"
-    >
-      {theme === "light" ? (
-        <Moon size={20} className="text-black" />
-      ) : (
-        <Sun size={20} className="text-white" />
-      )}
-    </button>
+    <div className="relative flex items-center">
+      <button
+        onClick={toggleTheme}
+        className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors focus:outline-none"
+        aria-label="Toggle theme"
+      >
+        {theme === "light" ? (
+          <Moon size={20} className={iconClass} />
+        ) : (
+          <Sun size={20} className={iconClass} />
+        )}
+      </button>
+    </div>
   );
 }

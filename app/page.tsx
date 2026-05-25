@@ -25,7 +25,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.5} stagger={0.1}>
             <h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-5xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-5xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               Crafting exceptional, insight-driven and technology-powered strategies to create measurable impact
@@ -38,7 +38,7 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <div className="flex justify-center gap-16 mt-10">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-10">
             <div className="flex flex-col items-center">
               <span className="text-4xl font-bold text-[var(--text)]">+55</span>
               <span className="text-sm text-[var(--text)] mt-2 uppercase tracking-widest">Total Projects Completed</span>
@@ -66,7 +66,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.09}>
             <h2
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               How we turn an idea into a product that sells
@@ -78,14 +78,15 @@ export default function Home() {
       <FlowArt aria-label="Our four-step process">
         {/* Step 1 — Discover */}
         <FlowSection id="process-discover" aria-label="Step 1: Discover" style={{ backgroundColor: "var(--bg)", borderRadius: "24px" }}>
-          <div style={{ display: "flex", flexDirection: "column", flex: 1, borderTop: "1px solid var(--border-sub)", width: "100%", position: "relative" }}>
-            <span style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", letterSpacing: "-0.03em", lineHeight: 1, color: "var(--text-muted)", textAlign: "right" }}>Strategy &amp; Research</span>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, paddingTop: "2rem", paddingBottom: "10vh" }}>
-              <div style={{ maxWidth: "800px", alignSelf: "flex-start" }}>
-                <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(3.5rem, 8vw, 6.8rem)", fontWeight: 300, fontStyle: "italic", color: "var(--text)", lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "1.5rem" }}>
+          <div className="relative flex flex-col flex-1 w-full border-t border-[var(--border-sub)]">
+            <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-[clamp(1.8rem,2.5vw,3.2rem)] font-light italic tracking-[-0.03em] leading-none text-[var(--text-muted)] text-right" style={{ fontFamily: "'Instrument Serif', serif" }}>Strategy &amp; Research</span>
+            <span className="block md:hidden mt-4 text-2xl font-light italic text-[var(--text-muted)]" style={{ fontFamily: "'Instrument Serif', serif" }}>Strategy &amp; Research</span>
+            <div className="flex flex-col justify-center flex-1 pt-4 md:pt-8 pb-[10vh]">
+              <div className="max-w-[800px] self-start">
+                <h3 className="text-[clamp(2.5rem,8vw,6.8rem)] font-light italic text-[var(--text)] leading-[1.05] tracking-[-0.04em] mb-4 md:mb-6" style={{ fontFamily: "'Instrument Serif', serif" }}>
                   We listen before we create
                 </h3>
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)", color: "var(--text-muted)", lineHeight: 1.65, maxWidth: "700px" }}>
+                <p className="text-[clamp(1.1rem,2.4vw,1.55rem)] text-[var(--text-muted)] leading-[1.65] max-w-[700px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Deep discovery sessions, competitor audits, and market analysis — we map out your terrain before a single pixel is placed. Strategy isn't a phase, it's the foundation.
                 </p>
               </div>
@@ -95,14 +96,15 @@ export default function Home() {
 
         {/* Step 2 — Design */}
         <FlowSection id="process-design" aria-label="Step 2: Design" style={{ backgroundColor: "var(--bg)", borderRadius: "24px" }}>
-          <div style={{ display: "flex", flexDirection: "column", flex: 1, borderTop: "1px solid var(--border-sub)", width: "100%", position: "relative" }}>
-            <span style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", letterSpacing: "-0.03em", lineHeight: 1, color: "var(--text-muted)", textAlign: "right" }}>UI / UX</span>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, paddingTop: "2rem", paddingBottom: "10vh" }}>
-              <div style={{ maxWidth: "800px", alignSelf: "flex-start" }}>
-                <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(3.5rem, 8vw, 6.8rem)", fontWeight: 300, fontStyle: "italic", color: "var(--text)", lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "1.5rem" }}>
+          <div className="relative flex flex-col flex-1 w-full border-t border-[var(--border-sub)]">
+            <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-[clamp(1.8rem,2.5vw,3.2rem)] font-light italic tracking-[-0.03em] leading-none text-[var(--text-muted)] text-right" style={{ fontFamily: "'Instrument Serif', serif" }}>UI / UX</span>
+            <span className="block md:hidden mt-4 text-2xl font-light italic text-[var(--text-muted)]" style={{ fontFamily: "'Instrument Serif', serif" }}>UI / UX</span>
+            <div className="flex flex-col justify-center flex-1 pt-4 md:pt-8 pb-[10vh]">
+              <div className="max-w-[800px] self-start">
+                <h3 className="text-[clamp(2.5rem,8vw,6.8rem)] font-light italic text-[var(--text)] leading-[1.05] tracking-[-0.04em] mb-4 md:mb-6" style={{ fontFamily: "'Instrument Serif', serif" }}>
                   Beauty with a purpose
                 </h3>
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)", color: "var(--text-muted)", lineHeight: 1.65, maxWidth: "700px" }}>
+                <p className="text-[clamp(1.1rem,2.4vw,1.55rem)] text-[var(--text-muted)] leading-[1.65] max-w-[700px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Wireframes evolve into pixel-perfect interfaces. Every component, every spacing decision, every animation serves conversion — aesthetics that mean business.
                 </p>
               </div>
@@ -112,14 +114,15 @@ export default function Home() {
 
         {/* Step 3 — Build */}
         <FlowSection id="process-build" aria-label="Step 3: Build" style={{ backgroundColor: "var(--bg)", borderRadius: "24px" }}>
-          <div style={{ display: "flex", flexDirection: "column", flex: 1, borderTop: "1px solid var(--border-sub)", width: "100%", position: "relative" }}>
-            <span style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", letterSpacing: "-0.03em", lineHeight: 1, color: "var(--text-muted)", textAlign: "right" }}>Engineering</span>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, paddingTop: "2rem", paddingBottom: "10vh" }}>
-              <div style={{ maxWidth: "800px", alignSelf: "flex-start" }}>
-                <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(3.5rem, 8vw, 6.8rem)", fontWeight: 300, fontStyle: "italic", color: "var(--text)", lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "1.5rem" }}>
+          <div className="relative flex flex-col flex-1 w-full border-t border-[var(--border-sub)]">
+            <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-[clamp(1.8rem,2.5vw,3.2rem)] font-light italic tracking-[-0.03em] leading-none text-[var(--text-muted)] text-right" style={{ fontFamily: "'Instrument Serif', serif" }}>Engineering</span>
+            <span className="block md:hidden mt-4 text-2xl font-light italic text-[var(--text-muted)]" style={{ fontFamily: "'Instrument Serif', serif" }}>Engineering</span>
+            <div className="flex flex-col justify-center flex-1 pt-4 md:pt-8 pb-[10vh]">
+              <div className="max-w-[800px] self-start">
+                <h3 className="text-[clamp(2.5rem,8vw,6.8rem)] font-light italic text-[var(--text)] leading-[1.05] tracking-[-0.04em] mb-4 md:mb-6" style={{ fontFamily: "'Instrument Serif', serif" }}>
                   Code that scales without limits
                 </h3>
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)", color: "var(--text-muted)", lineHeight: 1.65, maxWidth: "700px" }}>
+                <p className="text-[clamp(1.1rem,2.4vw,1.55rem)] text-[var(--text-muted)] leading-[1.65] max-w-[700px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Clean, performant, production-ready code. From Next.js frontends to Node.js APIs and cloud infrastructure — built to handle 10 users or 10 million.
                 </p>
               </div>
@@ -129,19 +132,21 @@ export default function Home() {
 
         {/* Step 4 — Launch */}
         <FlowSection id="process-launch" aria-label="Step 4: Launch" style={{ backgroundColor: "var(--bg)", borderRadius: "24px" }}>
-          <div style={{ display: "flex", flexDirection: "column", flex: 1, borderTop: "1px solid var(--border-sub)", width: "100%", position: "relative" }}>
-            <span style={{ position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", letterSpacing: "-0.03em", lineHeight: 1, color: "var(--text-muted)", textAlign: "right" }}>Deployment &amp; Growth</span>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, paddingTop: "2rem", paddingBottom: "10vh" }}>
-              <div style={{ maxWidth: "800px", alignSelf: "flex-start" }}>
-                <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(3.5rem, 8vw, 6.8rem)", fontWeight: 300, fontStyle: "italic", color: "var(--text)", lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: "1.5rem" }}>
+          <div className="relative flex flex-col flex-1 w-full border-t border-[var(--border-sub)]">
+            <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-[clamp(1.8rem,2.5vw,3.2rem)] font-light italic tracking-[-0.03em] leading-none text-[var(--text-muted)] text-right" style={{ fontFamily: "'Instrument Serif', serif" }}>Deployment &amp; Growth</span>
+            <span className="block md:hidden mt-4 text-2xl font-light italic text-[var(--text-muted)]" style={{ fontFamily: "'Instrument Serif', serif" }}>Deployment &amp; Growth</span>
+            <div className="flex flex-col justify-center flex-1 pt-4 md:pt-8 pb-[10vh]">
+              <div className="max-w-[800px] self-start">
+                <h3 className="text-[clamp(2.5rem,8vw,6.8rem)] font-light italic text-[var(--text)] leading-[1.05] tracking-[-0.04em] mb-4 md:mb-6" style={{ fontFamily: "'Instrument Serif', serif" }}>
                   Ship fast. Grow fearlessly.
                 </h3>
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)", color: "var(--text-muted)", lineHeight: 1.65, maxWidth: "700px" }}>
+                <p className="text-[clamp(1.1rem,2.4vw,1.55rem)] text-[var(--text-muted)] leading-[1.65] max-w-[700px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Continuous deployment, performance monitoring, SEO tuning, and iteration sprints. We stay partners long after the site goes live — your growth is our metric.
                 </p>
                 <a
                   href="/contact"
-                  style={{ display: "inline-block", marginTop: "2.5rem", fontFamily: "'Inter Tight', sans-serif", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text)", border: "1px solid var(--border-sub)", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", transition: "border-color 0.2s ease", pointerEvents: "all" }}
+                  className="inline-block mt-8 md:mt-10 text-xs md:text-sm font-medium tracking-widest uppercase text-[var(--text)] border border-[var(--border-sub)] py-3 px-6 md:py-4 md:px-8 rounded-full no-underline transition-colors hover:border-[var(--text)] pointer-events-auto"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 >
                   Start your project →
                 </a>
@@ -158,7 +163,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.09}>
             <h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               How we transformed a small business's online presence
@@ -178,7 +183,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
             <h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               What our satisfied customers are saying about us
@@ -198,7 +203,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
             <h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-3xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-3xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               Pick the plan that fits your start-up
@@ -216,7 +221,7 @@ export default function Home() {
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
             <h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-2xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-2xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
               Got questions? We've got answers

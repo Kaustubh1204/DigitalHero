@@ -137,14 +137,14 @@ export function FeaturedSpotlight() {
             ))}
 
             {/* Minimal CTA */}
-            <div className="mt-10 flex items-center gap-4">
+            <a href="/coming-soon" className="mt-10 flex items-center gap-4 text-foreground cursor-pointer no-underline group-hover:opacity-100 transition-opacity">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-muted-foreground/30 text-foreground transition-all duration-500 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background group-hover:scale-110 md:h-11 md:w-11 lg:h-12 lg:w-12 will-change-transform">
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:rotate-45" />
               </div>
               <span className="text-[10px] font-medium uppercase tracking-widest text-foreground/50 transition-opacity duration-500 group-hover:opacity-100 md:text-xs">
                 Explore
               </span>
-            </div>
+            </a>
           </div>
 
           {/* Right: Image Block */}

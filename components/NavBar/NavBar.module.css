@@ -24,6 +24,8 @@
   padding: 20px var(--pad-h);
   max-width: var(--max-w);
   margin: 0 auto;
+  position: relative;
+  z-index: 101;
 }
 
 .pillContainer {
@@ -36,6 +38,7 @@
   border-radius: 100px;
   border: 1px solid var(--border-sub);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
 /* NAV LINKS */
@@ -66,6 +69,12 @@
   font-weight: 500;
 }
 
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .themeToggleWrap {
   border-left: 1px solid var(--border-sub);
   padding-left: 20px;
@@ -73,26 +82,121 @@
   align-items: center;
 }
 
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(20px);
+}
+
+.mobileMenuOverlayOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+}
+
+.mobileLink {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.mobileLink:hover {
+  opacity: 0.7;
+}
+
 /* MOBILE */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .inner {
     padding: 16px var(--pad-h);
   }
 
   .pillContainer {
-    padding: 8px 20px;
+    padding: 8px 16px;
     gap: 16px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .pillContainerOpen {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   .links {
-    gap: 16px;
-  }
-
-  .link {
-    font-size: 12px;
-  }
-
-  .link:not(.linkContact) {
     display: none;
   }
+
+  .themeToggleWrap {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO OVERRIDES (PERMANENT)
+   Ensures the floating pill (tags/chips) and text are 
+   highly visible over dark/light video backgrounds,
+   but ONLY while in the Hero section (navHero).
+   ═══════════════════════════════════════════════════════ */
+.navHero .pillContainer {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.navHero .link {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.navHero .link:hover,
+.navHero .linkContact {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.navHero .themeToggleWrap {
+  border-left-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.navHero .mobileMenuBtn {
+  color: rgba(255, 255, 255, 0.95) !important;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4));
 }

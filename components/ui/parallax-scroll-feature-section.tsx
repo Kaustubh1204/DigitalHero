@@ -114,7 +114,7 @@ const ServiceSection = ({ service }: { service: any }) => {
       )}
     >
       {/* Text Content */}
-      <div ref={textRef} className="flex flex-col z-10 w-full md:w-1/2">
+      <div ref={textRef} className="flex flex-col items-center text-center md:items-start md:text-left z-10 w-full md:w-1/2">
         <span className="text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground mb-4">
           {service.subtitle}
         </span>
@@ -124,7 +124,7 @@ const ServiceSection = ({ service }: { service: any }) => {
         >
           {service.title}
         </h2>
-        <p className="text-muted-foreground text-lg mt-6 max-w-md leading-relaxed">
+        <p className="text-muted-foreground text-lg mt-6 max-w-md leading-relaxed text-justify md:text-left">
           {service.description}
         </p>
       </div>
