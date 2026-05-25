@@ -4,6 +4,7 @@ import styles from "./NavBar.module.css";
 import ThemeToggle from "../ThemeToggle";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const NavBar: React.FC = () => {
   const pathname = usePathname();
@@ -72,7 +73,7 @@ const NavBar: React.FC = () => {
           <ul className={styles.links} role="list">
             {!isContactPage && (
               <li>
-                <a 
+                <Link 
                   href="/" 
                   className={styles.link} 
                   id="nav-home"
@@ -84,19 +85,19 @@ const NavBar: React.FC = () => {
                   }}
                 >
                   Home
-                </a>
+                </Link>
               </li>
             )}
-            <li><a href="/#work" className={styles.link} id="nav-work">Work</a></li>
-            <li><a href="/#services" className={styles.link} id="nav-services">Services</a></li>
+            <li><Link href="/#work" className={styles.link} id="nav-work">Work</Link></li>
+            <li><Link href="/#services" className={styles.link} id="nav-services">Services</Link></li>
             <li>
-              <a
+              <Link
                 href={isContactPage ? "/" : "/contact"}
                 className={`${styles.link} ${styles.linkContact}`}
                 id={isContactPage ? "nav-home-btn" : "nav-contact"}
               >
                 {isContactPage ? "Home" : "Contact"}
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -122,16 +123,16 @@ const NavBar: React.FC = () => {
       <div className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ""}`}>
         <ul className={styles.mobileLinks}>
           <li>
-            <a href="/" className={styles.mobileLink} onClick={closeMobileMenu}>Home</a>
+            <Link href="/" className={styles.mobileLink} onClick={closeMobileMenu}>Home</Link>
           </li>
           <li>
-            <a href="/#work" className={styles.mobileLink} onClick={closeMobileMenu}>Work</a>
+            <Link href="/#work" className={styles.mobileLink} onClick={closeMobileMenu}>Work</Link>
           </li>
           <li>
-            <a href="/#services" className={styles.mobileLink} onClick={closeMobileMenu}>Services</a>
+            <Link href="/#services" className={styles.mobileLink} onClick={closeMobileMenu}>Services</Link>
           </li>
           <li>
-            <a href="/contact" className={styles.mobileLink} onClick={closeMobileMenu}>Contact</a>
+            <Link href="/contact" className={styles.mobileLink} onClick={closeMobileMenu}>Contact</Link>
           </li>
         </ul>
       </div>

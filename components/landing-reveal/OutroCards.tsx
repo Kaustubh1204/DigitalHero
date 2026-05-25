@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Check } from 'lucide-react';
 
 const outroCardData = [
@@ -49,7 +50,7 @@ export default function OutroCards({ containerRef }: OutroCardsProps) {
           {/* FRONT SIDE (Visible at start) */}
           <div className="lr-card-front">
             <div className="lr-card-image-wrapper">
-              <img src={data.image} alt={data.title} className="lr-card-image" />
+              <Image src={data.image} alt={data.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="lr-card-image object-cover" />
               <div className="lr-card-image-overlay" />
             </div>
             <div className="lr-card-front-content">

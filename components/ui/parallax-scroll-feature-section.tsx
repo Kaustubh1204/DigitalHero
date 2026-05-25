@@ -64,45 +64,48 @@ const ServiceSection = ({ service }: { service: any }) => {
   useEffect(() => {
     if (!sectionRef.current || !textRef.current || !videoRef.current) return
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 85%",
-        end: "bottom 15%",
-        toggleActions: "play none none reverse",
-      }
-    })
+    // Pre-promote layers to GPU before animating
+    gsap.set([textRef.current, videoRef.current], { force3D: true })
 
-    // Text Reveal
-    tl.fromTo(textRef.current, 
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
-    )
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play none none reverse",
+        }
+      })
 
-    // Video Frame Reveal (Premium Curtain Wipe)
-    const initialClip = service.reverse 
-      ? "inset(0% 0% 0% 100%)" 
-      : "inset(0% 100% 0% 0%)"
-    
-    tl.fromTo(videoRef.current,
-      { 
-        opacity: 0, 
-        scale: 1.1, 
-        clipPath: initialClip 
-      },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        clipPath: "inset(0% 0% 0% 0%)", 
-        duration: 1.6, 
-        ease: "power4.inOut" 
-      },
-      "-=0.8"
-    )
+      // Text Reveal
+      tl.fromTo(textRef.current, 
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
+      )
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill())
-    }
+      // Video Frame Reveal (Premium Curtain Wipe)
+      const initialClip = service.reverse 
+        ? "inset(0% 0% 0% 100%)" 
+        : "inset(0% 100% 0% 0%)"
+      
+      tl.fromTo(videoRef.current,
+        { 
+          opacity: 0, 
+          scale: 1.1, 
+          clipPath: initialClip 
+        },
+        { 
+          opacity: 1, 
+          scale: 1, 
+          clipPath: "inset(0% 0% 0% 0%)", 
+          duration: 1.6, 
+          ease: "power4.inOut" 
+        },
+        "-=0.8"
+      )
+    }, sectionRef)
+
+    return () => ctx.revert()
   }, [service.reverse])
 
   return (
@@ -133,6 +136,7 @@ const ServiceSection = ({ service }: { service: any }) => {
       <div
         ref={videoRef}
         className="relative w-full md:w-[360px] aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl grayscale"
+        style={{ willChange: 'transform, opacity, clip-path', transform: 'translateZ(0)' }}
       >
         <video
           src={service.videoUrl}
@@ -140,7 +144,9 @@ const ServiceSection = ({ service }: { service: any }) => {
           muted
           loop
           playsInline
+          preload="none"
           className="w-full h-full object-cover"
+          style={{ willChange: 'transform' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
       </div>

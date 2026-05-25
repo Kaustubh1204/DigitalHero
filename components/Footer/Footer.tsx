@@ -21,7 +21,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/abhiishektyagii/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[var(--text)]/5 flex items-center justify-center hover:bg-[var(--text)]/10 transition-colors border border-[var(--border-sub)]/20"
+                aria-label="LinkedIn Profile — opens in a new tab"
+                className="w-10 h-10 rounded-full bg-[var(--text)]/5 flex items-center justify-center hover:bg-[var(--text)]/10 transition-colors border border-[var(--border-sub)]/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--text)]"
               >
                 {/* Custom LinkedIn SVG */}
                 <svg

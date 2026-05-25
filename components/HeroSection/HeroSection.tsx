@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import styles from "./HeroSection.module.css";
 import NavBar from "../NavBar/NavBar";
 import TechMarquee from "../TechMarquee/TechMarquee";
+import Link from "next/link";
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -104,8 +105,8 @@ const HeroSection: React.FC = () => {
             </h2>
             
             <div className={styles.ctas}>
-              <a href="#work" className={styles.ctaPrimary}>View Work</a>
-              <a href="/contact" className={styles.ctaGhost}>Start a Project →</a>
+              <Link href="#work" className={styles.ctaPrimary}>View Work</Link>
+              <Link href="/contact" className={styles.ctaGhost}>Start a Project →</Link>
             </div>
           </div>
 

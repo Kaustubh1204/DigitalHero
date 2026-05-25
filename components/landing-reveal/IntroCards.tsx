@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const introCardImages = [
   '/card-1.jpg',
@@ -19,9 +20,15 @@ export default function IntroCards({ containerRef }: IntroCardsProps) {
   return (
     <div ref={containerRef} className="lr-intro-cards">
       {introCardImages.map((src, i) => (
-        <div key={i} className="lr-card">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={`Intro Card ${i + 1}`} />
+        <div key={i} className="lr-card" style={{ position: 'relative' }}>
+          <Image
+            src={src}
+            alt={`Intro Card ${i + 1}`}
+            fill
+            sizes="300px"
+            className="object-cover"
+            loading="lazy"
+          />
         </div>
       ))}
     </div>

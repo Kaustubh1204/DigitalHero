@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react"
 import { ArrowUpRight } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Link from "next/link"
+import Image from "next/image"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -137,14 +139,14 @@ export function FeaturedSpotlight() {
             ))}
 
             {/* Minimal CTA */}
-            <a href="/coming-soon" className="mt-10 flex items-center gap-4 text-foreground cursor-pointer no-underline group-hover:opacity-100 transition-opacity">
+            <Link href="/coming-soon" className="mt-10 flex items-center gap-4 text-foreground cursor-pointer no-underline group-hover:opacity-100 transition-opacity">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-muted-foreground/30 text-foreground transition-all duration-500 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background group-hover:scale-110 md:h-11 md:w-11 lg:h-12 lg:w-12 will-change-transform">
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:rotate-45" />
               </div>
               <span className="text-[10px] font-medium uppercase tracking-widest text-foreground/50 transition-opacity duration-500 group-hover:opacity-100 md:text-xs">
                 Explore
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Right: Image Block */}
@@ -155,12 +157,14 @@ export function FeaturedSpotlight() {
             {/* Image container */}
             <div className="relative h-[280px] w-[260px] overflow-hidden sm:h-[320px] sm:w-[300px] md:h-[360px] md:w-[320px] lg:h-[420px] lg:w-[380px] rounded-3xl will-change-transform">
               {slides.map((slide, i) => (
-                <img
+                <Image
                   key={i}
                   ref={(el) => { imageRefs.current[i] = el }}
                   src={slide.image}
                   alt={slide.tag}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
+                  fill
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 420px"
+                  className="absolute inset-0 object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
                   style={{ opacity: i === 0 ? 1 : 0 }}
                 />
               ))}

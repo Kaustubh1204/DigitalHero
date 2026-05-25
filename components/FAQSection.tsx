@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from 'react';
+import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -121,9 +122,9 @@ export default function FAQSection() {
           <p className="text-[15px] text-[var(--text-sec)]">
             Still have questions? We're here to help.
           </p>
-          <a href="/contact" className="px-6 py-2.5 text-[13px] font-medium border-[0.5px] border-[var(--border-sub)] rounded-full hover:bg-[hsl(var(--secondary))] hover:border-[var(--text-sec)] transition-all active:scale-[0.98]">
-            Get in touch
-          </a>
+          <Link href="/contact" className="px-6 py-2.5 text-[13px] font-medium border-[0.5px] border-[var(--border-sub)] rounded-full hover:bg-[hsl(var(--secondary))] hover:border-[var(--text-sec)] transition-all active:scale-[0.98]">
+            Get in touch →
+          </Link>
         </div>
       </div>
     </section>

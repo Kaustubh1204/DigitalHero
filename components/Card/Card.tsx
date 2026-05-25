@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import styles from "./Card.module.css";
 
 if (typeof window !== "undefined") {
@@ -140,11 +141,12 @@ export default function Card() {
             </div>
             
             {/* Column 2: Specific Image Focus */}
-            <div className={styles.cardImgCol}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className={styles.cardImgCol} style={{ position: 'relative' }}>
+              <Image
                 src={card.image}
                 alt={card.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className={styles.cardImg}
               />
             </div>

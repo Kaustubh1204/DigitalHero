@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   min-height: 600px;
   overflow: hidden;
   position: relative;
@@ -155,6 +156,10 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 13px 26px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 200ms ease;
   white-space: nowrap;
   border-radius: 100px;
@@ -285,12 +290,45 @@
 }
 
 @media (max-width: 640px) {
+  .section {
+    min-height: 500px;
+  }
+
   .contentLayer {
-    gap: 40px;
+    gap: 30px;
+    padding-top: 70px;
   }
   
   .hLine {
-    font-size: clamp(28px, 8vw, 42px);
+    font-size: clamp(24px, 7vw, 42px);
+  }
+
+  .ctas {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .ctaPrimary, .ctaGhost {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+  }
+}
+
+/* Ultra-narrow devices (320px) */
+@media (max-width: 360px) {
+  .brandGiant {
+    font-size: 36px;
+  }
+
+  .hLine {
+    font-size: 22px;
+  }
+
+  .contentLayer {
+    gap: 20px;
   }
 }
 

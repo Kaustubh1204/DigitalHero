@@ -34,8 +34,9 @@ export default function ThemeToggle({ isHero = false }: { isHero?: boolean }) {
     <div className="relative flex items-center">
       <button
         onClick={toggleTheme}
-        className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors focus:outline-none"
-        aria-label="Toggle theme"
+        className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--text)]"
+        aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
+        aria-pressed={theme === "dark"}
       >
         {theme === "light" ? (
           <Moon size={20} className={iconClass} />
