@@ -95,11 +95,11 @@ export function FeaturedSpotlight() {
 
   return (
     <div ref={containerRef} className="relative w-full overflow-hidden translate-z-0">
-      <div className="flex min-h-screen w-full items-center justify-center bg-background px-4 py-24 md:px-8">
+        <div className="flex min-h-[80vh] sm:min-h-screen w-full items-center justify-center bg-background px-4 py-16 sm:py-24 md:px-8">
         <div className="group relative flex w-full max-w-6xl flex-col items-center justify-center gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
           
           {/* Left: Text Block Container */}
-          <div className="relative z-10 flex w-full max-w-[320px] shrink-0 flex-col items-center text-center md:w-[240px] md:items-start md:text-left lg:w-[280px] lg:pt-4">
+          <div className="relative z-10 flex w-full max-w-[320px] sm:max-w-[360px] shrink-0 flex-col items-center text-center md:w-[240px] md:max-w-none md:items-start md:text-left lg:w-[280px] lg:pt-4">
             
             {slides.map((slide, i) => (
               <div
@@ -155,7 +155,7 @@ export function FeaturedSpotlight() {
             <div className="absolute -inset-3 border border-transparent transition-colors duration-500 group-hover:border-foreground/10 md:-inset-4" />
 
             {/* Image container */}
-            <div className="relative h-[280px] w-[260px] overflow-hidden sm:h-[320px] sm:w-[300px] md:h-[360px] md:w-[320px] lg:h-[420px] lg:w-[380px] rounded-3xl will-change-transform">
+            <div className="relative h-[260px] w-[230px] overflow-hidden sm:h-[300px] sm:w-[270px] md:h-[360px] md:w-[320px] lg:h-[420px] lg:w-[380px] rounded-2xl md:rounded-3xl will-change-transform">
               {slides.map((slide, i) => (
                 <Image
                   key={i}

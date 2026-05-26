@@ -38,7 +38,7 @@ export const FlowSection: React.FC<FlowSectionProps> = ({
       <div
         data-flow-inner
         className={cx(
-          'flow-art-container relative flex w-full flex-col justify-between gap-6 px-[4vw] pt-28 md:pt-[clamp(2rem,8vw,4vw)] pb-[4vw]',
+          'flow-art-container relative flex w-full flex-col justify-between gap-6 px-[clamp(16px,4vw,60px)] pt-28 md:pt-[clamp(2rem,8vw,4vw)] pb-[4vw]',
           'will-change-transform',
         )}
         style={{ transformOrigin: 'bottom left', transform: 'translateZ(0)', minHeight: '100vh', minBlockSize: '100dvh', ...innerStyle }}

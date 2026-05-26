@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 140px;
+  padding-top: clamp(80px, 12vh, 140px);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -291,12 +291,13 @@
 
 @media (max-width: 640px) {
   .section {
-    min-height: 500px;
+    min-height: 100dvh;
   }
 
   .contentLayer {
-    gap: 30px;
+    gap: 24px;
     padding-top: 70px;
+    align-items: center;
   }
   
   .hLine {

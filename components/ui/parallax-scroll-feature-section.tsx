@@ -112,7 +112,7 @@ const ServiceSection = ({ service }: { service: any }) => {
     <div
       ref={sectionRef}
       className={cn(
-        "min-h-[70vh] py-20 flex flex-col md:flex-row items-center justify-center md:gap-32 gap-10 px-6 max-w-7xl mx-auto w-full relative",
+        "min-h-[60vh] py-16 sm:py-20 flex flex-col md:flex-row items-center justify-center md:gap-24 lg:gap-32 gap-8 px-4 sm:px-6 max-w-7xl mx-auto w-full relative",
         service.reverse ? 'md:flex-row-reverse' : ''
       )}
     >
@@ -135,7 +135,7 @@ const ServiceSection = ({ service }: { service: any }) => {
       {/* Video Content */}
       <div
         ref={videoRef}
-        className="relative w-full md:w-[360px] aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl grayscale"
+        className="relative w-full max-w-[340px] sm:max-w-[380px] md:w-[360px] aspect-[4/5] overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl grayscale flex-shrink-0"
         style={{ willChange: 'transform, opacity, clip-path', transform: 'translateZ(0)' }}
       >
         <video

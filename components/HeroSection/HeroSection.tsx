@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className={styles.video}
         />
         {/* Black-and-white overlay only — no blur, no gradient, no extra color filters, no opacity tint */}

@@ -2,14 +2,12 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import Card from "@/components/Card/Card";
 import { Component as ParallaxScrollSection } from "@/components/ui/parallax-scroll-feature-section";
 import { FeaturedSpotlight } from "@/components/ui/feature-spotlight";
-import LandingReveal from "@/components/landing-reveal/LandingReveal";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer/Footer";
 import TextBlockAnimation from "@/components/ui/text-block-animation";
 import ParallaxHeading from "@/components/ui/parallax-heading";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
 import SEOKeywordsMarquee from "@/components/ui/seo-keywords-marquee";
-import "@/components/landing-reveal/LandingReveal.css";
 
 
 
@@ -18,7 +16,7 @@ export default function Home() {
     <main className="relative">
       <HeroSection />
 
-      <section id="services" className="py-24 px-6 flex flex-col items-center text-center">
+      <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
         <ParallaxHeading speed={35}>
           <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
             What we do
@@ -59,7 +57,7 @@ export default function Home() {
       </div>
 
       {/* ── STORY SCROLL: How We Work ── */}
-      <section className="py-24 px-6 flex flex-col items-center text-center">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
         <ParallaxHeading speed={30}>
           <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
             Our Process
@@ -156,7 +154,7 @@ export default function Home() {
         </FlowSection>
       </FlowArt>
 
-      <section className="py-24 px-6 flex flex-col items-center text-center">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
         <ParallaxHeading speed={30}>
           <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
             Case Study
@@ -176,7 +174,7 @@ export default function Home() {
         <Card />
       </div>
 
-      <section className="py-24 px-6 flex flex-col items-center text-center">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
         <ParallaxHeading speed={30}>
           <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
             Testimonials
@@ -196,25 +194,7 @@ export default function Home() {
         <FeaturedSpotlight />
       </div>
 
-      <section className="py-24 px-6 flex flex-col items-center text-center">
-        <ParallaxHeading speed={30}>
-          <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
-            Pricing
-          </p>
-          <TextBlockAnimation duration={1.2} stagger={0.08}>
-            <h2 
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-3xl mx-auto"
-              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
-            >
-              Pick the plan that fits your start-up
-            </h2>
-          </TextBlockAnimation>
-        </ParallaxHeading>
-      </section>
-
-      <LandingReveal />
-
-      <section className="py-24 px-6 flex flex-col items-center text-center">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
         <ParallaxHeading speed={25}>
           <p className="text-sm uppercase tracking-widest text-[var(--text)] font-medium mb-6">
             FAQ
