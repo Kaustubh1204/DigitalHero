@@ -66,11 +66,11 @@ export default function ContactForm() {
           <div className="lg:col-span-5 contact-animate">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)] mb-4 block">Get in touch</span>
             <h1 className="text-6xl md:text-8xl font-playfair tracking-tight leading-[0.8] mb-8">
-              Let's <br /> 
+              Let&apos;s <br /> 
               <span className="italic opacity-90 font-light" style={{ fontFamily: "'Instrument Serif', serif" }}>Connect.</span>
             </h1>
             <p className="text-[var(--text-muted)] text-base md:text-lg max-w-md leading-relaxed mb-12">
-              Have a project in mind or just want to say hi? We're always open to discussing new ideas and creative collaborations.
+              Have a project in mind or just want to say hi? We&apos;re always open to discussing new ideas and creative collaborations.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 pt-8 border-t border-[var(--border-sub)]/30">

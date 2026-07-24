@@ -5,7 +5,9 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger)
+}
 
 export default function ParallaxHeading({ children, speed = 40 }: { children: React.ReactNode, speed?: number }) {
     const ref = useRef<HTMLDivElement>(null)

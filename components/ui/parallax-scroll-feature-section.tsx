@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { cn } from "@/lib/utils";
@@ -69,6 +69,24 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "200px" }
+    )
+
+    observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     if (!sectionRef.current || !textRef.current || !videoRef.current) return
@@ -147,16 +165,20 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
         className="relative w-full max-w-[340px] sm:max-w-[380px] md:w-[360px] aspect-[4/5] overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl grayscale flex-shrink-0"
         style={{ willChange: 'transform, opacity, clip-path', transform: 'translateZ(0)' }}
       >
-        <video
-          src={service.videoUrl}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          className="w-full h-full object-cover"
-          style={{ willChange: 'transform' }}
-        />
+        {inView ? (
+          <video
+            src={service.videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            style={{ willChange: 'transform' }}
+            aria-hidden="true"
+          />
+        ) : (
+          <div className="w-full h-full bg-black/10" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
       </div>
     </div>

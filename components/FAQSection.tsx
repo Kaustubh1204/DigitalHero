@@ -126,7 +126,7 @@ export default function FAQSection() {
         {/* Footer Row */}
         <div className="mt-16 pt-8 border-t-[0.5px] border-[var(--border-sub)] flex flex-col sm:flex-row justify-between items-center gap-6">
           <p className="text-[15px] text-[var(--text-sec)]">
-            Still have questions? We're here to help.
+            Still have questions? We&apos;re here to help.
           </p>
           <Link href="/contact" className="px-6 py-2.5 text-[13px] font-medium border-[0.5px] border-[var(--border-sub)] rounded-full hover:bg-[hsl(var(--secondary))] hover:border-[var(--text-sec)] transition-all active:scale-[0.98]">
             Get in touch →

@@ -12,9 +12,12 @@ const HeroSection: React.FC = () => {
     if (!video) return;
 
     const minTime = 5;
-    const maxTime = 210;
 
-    const getRandomTime = () => Math.random() * (maxTime - minTime) + minTime;
+    const getRandomTime = () => {
+      const duration = video.duration || 30;
+      const maxTime = duration > 15 ? duration - 6 : duration;
+      return Math.random() * (maxTime - minTime) + minTime;
+    };
 
     let segmentStartTime = getRandomTime();
     let isJumping = false;
@@ -70,13 +73,14 @@ const HeroSection: React.FC = () => {
       <div className={styles.videoLayer} id="hero-video-layer" aria-hidden="true">
         <video
           ref={videoRef}
-          src="/ANOMALY - CINEMATIC SKI COMMERCIAL   SONY FX3 JAPAN [4K].mp4"
+          src="/ANOMALY_compressed.mp4"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
           className={styles.video}
+          aria-hidden="true"
         />
         {/* Black-and-white overlay only — no blur, no gradient, no extra color filters, no opacity tint */}
         <div className={styles.bwOverlay} />

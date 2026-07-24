@@ -8,8 +8,6 @@ import Link from "next/link";
 
 const NavBar: React.FC = () => {
   const pathname = usePathname();
-  const isContactPage = pathname === "/contact";
-  
   const isHomePage = pathname === "/";
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -121,8 +119,9 @@ const NavBar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <div 
         className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ""}`}
-        role="dialog"
-        aria-modal="true"
+        role={isMobileMenuOpen ? "dialog" : undefined}
+        aria-modal={isMobileMenuOpen ? "true" : undefined}
+        aria-hidden={!isMobileMenuOpen ? "true" : "false"}
         aria-label="Mobile navigation menu"
       >
         <ul className={styles.mobileLinks}>

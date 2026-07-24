@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 
-gsap.registerPlugin(SplitText, ScrollTrigger)
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(SplitText, ScrollTrigger)
+}
 
 interface TextBlockAnimationProps {
     children: React.ReactNode;
@@ -28,7 +30,6 @@ export default function TextBlockAnimation({
     useGSAP(() => {
         if (!containerRef.current) return
         
-        // @ts-ignore
         const split = new SplitText(containerRef.current, {
             type: "lines,chars",
             linesClass: "line-wrapper"

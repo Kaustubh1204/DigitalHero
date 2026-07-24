@@ -162,7 +162,7 @@ export default function Home() {
                   We listen before we create
                 </h3>
                 <p className="text-[clamp(1.1rem,2.4vw,1.55rem)] text-[var(--text-muted)] leading-[1.65] max-w-[700px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Deep discovery sessions, competitor audits, and market analysis — we map out your terrain before a single pixel is placed. Strategy isn't a phase, it's the foundation.
+                  Deep discovery sessions, competitor audits, and market analysis — we map out your terrain before a single pixel is placed. Strategy isn&apos;t a phase, it&apos;s the foundation.
                 </p>
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function Home() {
               className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
-              How we transformed a small business's online presence
+              How we transformed a small business&apos;s online presence
             </h2>
           </TextBlockAnimation>
         </ParallaxHeading>
@@ -281,11 +281,11 @@ export default function Home() {
               className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-2xl mx-auto"
               style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
             >
-              Got questions? We've got answers
+              Got questions? We&apos;ve got answers
             </h2>
           </TextBlockAnimation>
           <p className="text-base text-[var(--text)] mt-6 max-w-sm mx-auto leading-relaxed">
-            Can't find what you're looking for? Reach out — we'll get back to you.
+            Can&apos;t find what you&apos;re looking for? Reach out — we&apos;ll get back to you.
           </p>
         </ParallaxHeading>
       </section>

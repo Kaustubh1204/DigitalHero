@@ -181,7 +181,7 @@ export function FeaturedSpotlight() {
             {/* Index number */}
             <span
               ref={indexRef}
-              className="absolute -bottom-8 right-0 font-mono text-xs text-muted-foreground opacity-40 transition-opacity duration-500 group-hover:opacity-100 md:text-sm"
+              className="absolute -bottom-8 right-0 font-mono text-xs text-muted-foreground opacity-65 transition-opacity duration-500 group-hover:opacity-100 md:text-sm"
             >
               01
             </span>

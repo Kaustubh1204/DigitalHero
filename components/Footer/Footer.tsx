@@ -13,8 +13,8 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-6">
             <h2 className="text-2xl font-black uppercase tracking-tighter">Digital Heroes</h2>
-            <p className="opacity-60 text-sm leading-relaxed max-w-xs">
-              Empowering businesses with innovative digital solutions. Let's create something amazing together.
+            <p className="opacity-80 text-sm leading-relaxed max-w-xs">
+              Empowering businesses with innovative digital solutions. Let&apos;s create something amazing together.
             </p>
             <div className="flex gap-4">
               <a 
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Sitemap Section */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest opacity-30 mb-6">Sitemap</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest opacity-65 mb-6">Sitemap</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/contact" className="hover:opacity-100 opacity-70 transition-opacity">Contact us</Link></li>
               <li><Link href="/services" className="hover:opacity-100 opacity-70 transition-opacity">Services</Link></li>
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Other Pages */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest opacity-30 mb-6">Legal</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest opacity-65 mb-6">Legal</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/coming-soon" className="hover:opacity-100 opacity-70 transition-opacity">Terms & Conditions</Link></li>
               <li><Link href="/coming-soon" className="hover:opacity-100 opacity-70 transition-opacity">Privacy Policy</Link></li>
@@ -65,13 +65,13 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest opacity-30 mb-6">Get in Touch</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest opacity-65 mb-6">Get in Touch</h3>
             <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3 opacity-60">
+              <li className="flex items-start gap-3 opacity-80">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span>New Delhi, India</span>
               </li>
-              <li className="flex items-center gap-3 opacity-60">
+              <li className="flex items-center gap-3 opacity-80">
                 <Mail size={16} className="flex-shrink-0" />
                 <a href="mailto:hello@digitalheroesco.com" className="hover:opacity-100 transition-opacity">
                   hello@digitalheroesco.com
@@ -84,9 +84,9 @@ export default function Footer() {
 
         {/* Bottom Line */}
         <div className="pt-8 border-t border-[var(--border-sub)]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
-          <p className="opacity-40">©2026 Digital Heroes. All Rights Reserved</p>
+          <p className="opacity-65">©2026 Digital Heroes. All Rights Reserved</p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center text-center">
-            <span className="opacity-40">Built with precision</span>
+            <span className="opacity-65">Built with precision</span>
             <a 
               href="https://digitalheroesco.com" 
               className="text-[var(--text)] font-semibold border-b border-[var(--text)] hover:border-transparent transition-all duration-300"

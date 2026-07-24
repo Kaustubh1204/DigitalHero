@@ -8,9 +8,11 @@ export default function ThemeToggle({ isHero = false }: { isHero?: boolean }) {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
     if (savedTheme === "dark") {
       document.documentElement.classList.add("dark");
+      setTimeout(() => {
+        setTheme("dark");
+      }, 0);
     } else {
       document.documentElement.classList.remove("dark");
     }

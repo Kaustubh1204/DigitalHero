@@ -5,7 +5,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function cx(...parts: Array<string | undefined | false | null>): string {
   return parts.filter(Boolean).join(' ');
@@ -128,13 +130,13 @@ const FlowArt: React.FC<FlowArtProps> = ({
   );
 
   return (
-    <main
+    <section
       ref={containerRef}
       aria-label={ariaLabel}
       className={cx('w-full overflow-x-hidden', className)}
     >
       {children}
-    </main>
+    </section>
   );
 };
 
