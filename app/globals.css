@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-playfair: "Instrument Serif", serif;
+  --font-playfair: var(--font-instrument), serif;
 }
 
 @layer base {
@@ -33,7 +32,7 @@ body {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;

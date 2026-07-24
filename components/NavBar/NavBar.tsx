@@ -71,32 +71,31 @@ const NavBar: React.FC = () => {
           
           {/* Desktop Links */}
           <ul className={styles.links} role="list">
-            {!isContactPage && (
-              <li>
-                <Link 
-                  href="/" 
-                  className={styles.link} 
-                  id="nav-home"
-                  onClick={(e) => {
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  Home
-                </Link>
-              </li>
-            )}
+            <li>
+              <Link 
+                href="/" 
+                className={styles.link} 
+                id="nav-home"
+                onClick={(e) => {
+                  if (pathname === '/') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                Home
+              </Link>
+            </li>
             <li><Link href="/#work" className={styles.link} id="nav-work">Work</Link></li>
-            <li><Link href="/#services" className={styles.link} id="nav-services">Services</Link></li>
+            <li><Link href="/services" className={styles.link} id="nav-services">Services</Link></li>
+            <li><Link href="/pricing" className={styles.link} id="nav-pricing">Pricing</Link></li>
             <li>
               <Link
-                href={isContactPage ? "/" : "/contact"}
+                href="/contact"
                 className={`${styles.link} ${styles.linkContact}`}
-                id={isContactPage ? "nav-home-btn" : "nav-contact"}
+                id="nav-contact"
               >
-                {isContactPage ? "Home" : "Contact"}
+                Contact
               </Link>
             </li>
           </ul>
@@ -120,7 +119,12 @@ const NavBar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ""}`}>
+      <div 
+        className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
+      >
         <ul className={styles.mobileLinks}>
           <li>
             <Link href="/" className={styles.mobileLink} onClick={closeMobileMenu}>Home</Link>
@@ -129,7 +133,10 @@ const NavBar: React.FC = () => {
             <Link href="/#work" className={styles.mobileLink} onClick={closeMobileMenu}>Work</Link>
           </li>
           <li>
-            <Link href="/#services" className={styles.mobileLink} onClick={closeMobileMenu}>Services</Link>
+            <Link href="/services" className={styles.mobileLink} onClick={closeMobileMenu}>Services</Link>
+          </li>
+          <li>
+            <Link href="/pricing" className={styles.mobileLink} onClick={closeMobileMenu}>Pricing</Link>
           </li>
           <li>
             <Link href="/contact" className={styles.mobileLink} onClick={closeMobileMenu}>Contact</Link>

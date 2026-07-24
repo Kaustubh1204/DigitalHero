@@ -21,9 +21,9 @@ const slides = [
   },
   {
     tag: "Customer stories",
-    title: "Usualdev’s",
+    title: "Digital Heroes’",
     subtitle: "expertise transformed my vision into success!",
-    author: "Vansh Kushwaha — Founder of Vkshotz",
+    author: "User #001 — Founder",
     image: "/img/d1b8c489f009b045c6c7aed8d6c53510.jpg"
   },
   {
@@ -36,8 +36,8 @@ const slides = [
   {
     tag: "Customer stories",
     title: "Visionary",
-    subtitle: "Usualdev brought our ideas to life with powerful design, smart development, and reliable digital solutions.",
-    author: "Manasvi Rajendra — Founder of SheenEdge",
+    subtitle: "Digital Heroes brought our ideas to life with powerful design, smart development, and reliable digital solutions.",
+    author: "User #001 — Founder",
     image: "/img/e04c66e25042667b34c76034636666e6.jpg"
   }
 ]

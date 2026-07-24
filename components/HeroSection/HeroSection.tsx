@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import styles from "./HeroSection.module.css";
-import NavBar from "../NavBar/NavBar";
 import TechMarquee from "../TechMarquee/TechMarquee";
 import Link from "next/link";
 
@@ -66,7 +65,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className={styles.section} id="hero" aria-label="Hero section">
-      <NavBar />
 
       {/* Background video — fully covers the hero section */}
       <div className={styles.videoLayer} id="hero-video-layer" aria-hidden="true">
@@ -92,7 +90,7 @@ const HeroSection: React.FC = () => {
           
           {/* LEFT: Brand */}
           <div className={`${styles.leftSide} anim-slide-up d-250`}>
-            <h1 className={styles.brandGiant}>Usualdev</h1>
+            <h1 className={styles.brandGiant}>Digital Heroes</h1>
           </div>
 
           {/* RIGHT: Headline & CTA */}

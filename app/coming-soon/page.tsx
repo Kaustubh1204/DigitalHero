@@ -1,16 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import NavBar from '@/components/NavBar/NavBar';
-import Footer from '@/components/Footer/Footer';
+import type { Metadata } from 'next';
 import TechMarquee from '@/components/TechMarquee/TechMarquee';
+
+export const metadata: Metadata = {
+  title: "Coming Soon | Digital Heroes",
+  description: "This page is currently under construction. Stay tuned for new features and portfolio work.",
+  alternates: {
+    canonical: "/coming-soon",
+  },
+};
 
 export default function ComingSoonPage() {
   return (
-    <main className="relative flex flex-col min-h-screen bg-[var(--bg)]">
-      <NavBar />
-      
-      <div className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-24 text-center">
+    <div className="relative flex flex-col min-h-screen bg-[var(--bg)]">
+      <div className="flex-grow flex flex-col items-center justify-center px-6 pt-32 pb-24 text-center">
         <span className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--text-muted)] mb-8 anim-slide-up d-100">
           Work in progress
         </span>
@@ -41,8 +46,6 @@ export default function ComingSoonPage() {
       <div className="w-full border-y border-[var(--border-sub)]/30">
         <TechMarquee />
       </div>
-      
-      <Footer />
-    </main>
+    </div>
   );
 }

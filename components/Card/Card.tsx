@@ -137,7 +137,7 @@ export default function Card() {
             {/* Column 1: Text content */}
             <div className={styles.cardTextCol}>
               <p className={styles.subtitle}>{card.subtitle}</p>
-              <h1 className={styles.cardTitle}>{card.title}</h1>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
             </div>
             
             {/* Column 2: Specific Image Focus */}

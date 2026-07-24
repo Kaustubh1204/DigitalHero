@@ -12,19 +12,19 @@ export default function Footer() {
           
           {/* Brand Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-black uppercase tracking-tighter">Usualdev</h2>
+            <h2 className="text-2xl font-black uppercase tracking-tighter">Digital Heroes</h2>
             <p className="opacity-60 text-sm leading-relaxed max-w-xs">
-              Empowering businesses with innovative solutions. Let's create something amazing together.
+              Empowering businesses with innovative digital solutions. Let's create something amazing together.
             </p>
             <div className="flex gap-4">
               <a 
-                href="https://www.linkedin.com/in/abhiishektyagii/" 
+                href="https://digitalheroesco.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="LinkedIn Profile — opens in a new tab"
+                aria-label="Digital Heroes - opens in a new tab"
                 className="w-10 h-10 rounded-full bg-[var(--text)]/5 flex items-center justify-center hover:bg-[var(--text)]/10 transition-colors border border-[var(--border-sub)]/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--text)]"
               >
-                {/* Custom LinkedIn SVG */}
+                {/* Custom LinkedIn/Social SVG */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -49,8 +49,6 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-widest opacity-30 mb-6">Sitemap</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/contact" className="hover:opacity-100 opacity-70 transition-opacity">Contact us</Link></li>
-              <li><Link href="/about" className="hover:opacity-100 opacity-70 transition-opacity">About us</Link></li>
-              <li><Link href="/work" className="hover:opacity-100 opacity-70 transition-opacity">Work</Link></li>
               <li><Link href="/services" className="hover:opacity-100 opacity-70 transition-opacity">Services</Link></li>
               <li><Link href="/pricing" className="hover:opacity-100 opacity-70 transition-opacity">Pricing</Link></li>
             </ul>
@@ -60,8 +58,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest opacity-30 mb-6">Legal</h3>
             <ul className="space-y-4 text-sm">
-              <li><Link href="/terms" className="hover:opacity-100 opacity-70 transition-opacity">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="hover:opacity-100 opacity-70 transition-opacity">Privacy Policy</Link></li>
+              <li><Link href="/coming-soon" className="hover:opacity-100 opacity-70 transition-opacity">Terms & Conditions</Link></li>
+              <li><Link href="/coming-soon" className="hover:opacity-100 opacity-70 transition-opacity">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -71,12 +69,12 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3 opacity-60">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Delhi, India - 110092</span>
+                <span>New Delhi, India</span>
               </li>
               <li className="flex items-center gap-3 opacity-60">
                 <Mail size={16} className="flex-shrink-0" />
-                <a href="mailto:hello@usualdev.online" className="hover:opacity-100 transition-opacity">
-                  hello@usualdev.online
+                <a href="mailto:hello@digitalheroesco.com" className="hover:opacity-100 transition-opacity">
+                  hello@digitalheroesco.com
                 </a>
               </li>
             </ul>
@@ -85,11 +83,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom Line */}
-        <div className="pt-8 border-t border-[var(--border-sub)]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium opacity-20 uppercase tracking-widest">
-          <p>©2025 Usualdev. All Rights Reserved</p>
-          <div className="flex gap-8">
-            <span>Built with precision</span>
-            <span>Est. 2024</span>
+        <div className="pt-8 border-t border-[var(--border-sub)]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
+          <p className="opacity-40">©2026 Digital Heroes. All Rights Reserved</p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center text-center">
+            <span className="opacity-40">Built with precision</span>
+            <a 
+              href="https://digitalheroesco.com" 
+              className="text-[var(--text)] font-semibold border-b border-[var(--text)] hover:border-transparent transition-all duration-300"
+              style={{ letterSpacing: '0.05em' }}
+            >
+              Built for Digital Heroes Training Task
+            </a>
           </div>
         </div>
       </div>

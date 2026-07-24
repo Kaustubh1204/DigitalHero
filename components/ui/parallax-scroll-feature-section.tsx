@@ -56,7 +56,16 @@ export const Component = () => {
   )
 }
 
-const ServiceSection = ({ service }: { service: any }) => {
+interface ServiceItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  videoUrl: string;
+  reverse: boolean;
+}
+
+const ServiceSection = ({ service }: { service: ServiceItem }) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLDivElement>(null)

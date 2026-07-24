@@ -3,17 +3,94 @@ import Card from "@/components/Card/Card";
 import { Component as ParallaxScrollSection } from "@/components/ui/parallax-scroll-feature-section";
 import { FeaturedSpotlight } from "@/components/ui/feature-spotlight";
 import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer/Footer";
 import TextBlockAnimation from "@/components/ui/text-block-animation";
 import ParallaxHeading from "@/components/ui/parallax-heading";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
 import SEOKeywordsMarquee from "@/components/ui/seo-keywords-marquee";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Heroes — Premium Design & Development Studio",
+  description: "Digital Heroes is a full-service digital product studio specialising in scalable web design, full-stack development, mobile applications, and growth strategy for bold brands.",
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Digital Heroes",
+  "url": "https://digitalheroesco.com",
+  "logo": "https://digitalheroesco.com/logo.png",
+  "description": "Digital Heroes is a full-service digital product studio specialising in scalable web design, full-stack development, mobile applications, and growth strategy.",
+  "sameAs": [
+    "https://digitalheroesco.com"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Digital Heroes offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digital Heroes provides end-to-end digital services including UI/UX design, website and web application development, mobile app development, branding, and custom digital solutions. We help businesses turn ideas into scalable and impactful digital products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Project timelines depend on the scope and complexity of the work. Smaller projects may take a few weeks, while larger or more complex projects can take several months. A clear timeline is shared before the project begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pricing structured at Digital Heroes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our pricing is flexible and transparent, based on project requirements, features, and timelines. We provide custom quotes to ensure clients receive solutions that fit their needs and budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ongoing support after project completion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Digital Heroes offers ongoing support after project completion. This includes post-launch support, maintenance, updates, and technical assistance to ensure the product continues to perform smoothly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often will I receive updates on my project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clients receive regular updates throughout the project lifecycle. Updates are typically shared weekly or at key milestones through email, calls, or scheduled meetings to keep communication clear and transparent."
+      }
+    }
+  ]
+};
 
 
 
 export default function Home() {
   return (
     <main className="relative">
+      {/* Schema Script Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <HeroSection />
 
       <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center text-center">
@@ -215,7 +292,6 @@ export default function Home() {
 
       <FAQSection />
       <SEOKeywordsMarquee />
-      <Footer />
     </main>
   );
 }
