@@ -69,6 +69,7 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLDivElement>(null)
+  const coverRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
@@ -89,10 +90,10 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
   }, [])
 
   useEffect(() => {
-    if (!sectionRef.current || !textRef.current || !videoRef.current) return
+    if (!sectionRef.current || !textRef.current || !videoRef.current || !coverRef.current) return
 
     // Pre-promote layers to GPU before animating
-    gsap.set([textRef.current, videoRef.current], { force3D: true })
+    gsap.set([textRef.current, videoRef.current, coverRef.current], { force3D: true })
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -110,25 +111,26 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
         { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
       )
 
-      // Video Frame Reveal (Premium Curtain Wipe)
-      const initialClip = service.reverse 
-        ? "inset(0% 0% 0% 100%)" 
-        : "inset(0% 100% 0% 0%)"
-      
+      // Video Frame Reveal (Composited Fade + Scale)
       tl.fromTo(videoRef.current,
         { 
           opacity: 0, 
-          scale: 1.1, 
-          clipPath: initialClip 
+          scale: 1.1
         },
         { 
           opacity: 1, 
           scale: 1, 
-          clipPath: "inset(0% 0% 0% 0%)", 
           duration: 1.6, 
           ease: "power4.inOut" 
         },
         "-=0.8"
+      )
+
+      // Curtain cover slide-out (Wipe reveal effect)
+      tl.fromTo(coverRef.current,
+        { scaleX: 1 },
+        { scaleX: 0, duration: 1.6, ease: "power4.inOut" },
+        "<"
       )
     }, sectionRef)
 
@@ -163,8 +165,18 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
       <div
         ref={videoRef}
         className="relative w-full max-w-[340px] sm:max-w-[380px] md:w-[360px] aspect-[4/5] overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl grayscale flex-shrink-0"
-        style={{ willChange: 'transform, opacity, clip-path', transform: 'translateZ(0)' }}
+        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
       >
+        {/* Composited cover mask for the curtain reveal animation */}
+        <div
+          ref={coverRef}
+          className="absolute inset-0 bg-[var(--bg)] z-20 pointer-events-none"
+          style={{ 
+            transformOrigin: service.reverse ? 'right center' : 'left center',
+            willChange: 'transform'
+          }}
+        />
+
         {inView ? (
           <video
             src={service.videoUrl}
@@ -175,6 +187,7 @@ const ServiceSection = ({ service }: { service: ServiceItem }) => {
             className="w-full h-full object-cover"
             style={{ willChange: 'transform' }}
             aria-hidden="true"
+            tabIndex={-1}
           />
         ) : (
           <div className="w-full h-full bg-black/10" />

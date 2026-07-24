@@ -1,13 +1,22 @@
 import HeroSection from "@/components/HeroSection/HeroSection";
-import Card from "@/components/Card/Card";
-import { Component as ParallaxScrollSection } from "@/components/ui/parallax-scroll-feature-section";
-import { FeaturedSpotlight } from "@/components/ui/feature-spotlight";
-import FAQSection from "@/components/FAQSection";
 import TextBlockAnimation from "@/components/ui/text-block-animation";
 import ParallaxHeading from "@/components/ui/parallax-heading";
-import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
+import { FlowSection } from "@/components/ui/flow-section";
 import SEOKeywordsMarquee from "@/components/ui/seo-keywords-marquee";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const Card = dynamic(() => import("@/components/Card/Card"), { ssr: true });
+const ParallaxScrollSection = dynamic(
+  () => import("@/components/ui/parallax-scroll-feature-section").then((mod) => mod.Component),
+  { ssr: true }
+);
+const FlowArt = dynamic(() => import("@/components/ui/story-scroll"), { ssr: true });
+const FeaturedSpotlight = dynamic(
+  () => import("@/components/ui/feature-spotlight").then((mod) => mod.FeaturedSpotlight),
+  { ssr: true }
+);
+const FAQSection = dynamic(() => import("@/components/FAQSection"), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Digital Heroes — Premium Design & Development Studio",
@@ -150,7 +159,7 @@ export default function Home() {
         </ParallaxHeading>
       </section>
 
-      <FlowArt aria-label="Our four-step process">
+      <FlowArt>
         {/* Step 1 — Discover */}
         <FlowSection id="process-discover" aria-label="Step 1: Discover" style={{ backgroundColor: "var(--bg)", borderRadius: "24px" }}>
           <div className="relative flex flex-col flex-1 w-full border-t border-[var(--border-sub)]">

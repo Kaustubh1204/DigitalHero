@@ -122,23 +122,23 @@ const NavBar: React.FC = () => {
         role={isMobileMenuOpen ? "dialog" : undefined}
         aria-modal={isMobileMenuOpen ? "true" : undefined}
         aria-hidden={!isMobileMenuOpen ? "true" : "false"}
-        aria-label="Mobile navigation menu"
+        aria-label={isMobileMenuOpen ? "Mobile navigation menu" : undefined}
       >
         <ul className={styles.mobileLinks}>
           <li>
-            <Link href="/" className={styles.mobileLink} onClick={closeMobileMenu}>Home</Link>
+            <Link href="/" className={styles.mobileLink} onClick={closeMobileMenu} tabIndex={isMobileMenuOpen ? 0 : -1}>Home</Link>
           </li>
           <li>
-            <Link href="/#work" className={styles.mobileLink} onClick={closeMobileMenu}>Work</Link>
+            <Link href="/#work" className={styles.mobileLink} onClick={closeMobileMenu} tabIndex={isMobileMenuOpen ? 0 : -1}>Work</Link>
           </li>
           <li>
-            <Link href="/services" className={styles.mobileLink} onClick={closeMobileMenu}>Services</Link>
+            <Link href="/services" className={styles.mobileLink} onClick={closeMobileMenu} tabIndex={isMobileMenuOpen ? 0 : -1}>Services</Link>
           </li>
           <li>
-            <Link href="/pricing" className={styles.mobileLink} onClick={closeMobileMenu}>Pricing</Link>
+            <Link href="/pricing" className={styles.mobileLink} onClick={closeMobileMenu} tabIndex={isMobileMenuOpen ? 0 : -1}>Pricing</Link>
           </li>
           <li>
-            <Link href="/contact" className={styles.mobileLink} onClick={closeMobileMenu}>Contact</Link>
+            <Link href="/contact" className={styles.mobileLink} onClick={closeMobileMenu} tabIndex={isMobileMenuOpen ? 0 : -1}>Contact</Link>
           </li>
         </ul>
       </div>

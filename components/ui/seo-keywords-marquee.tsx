@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 const keywords = [
@@ -26,7 +24,6 @@ const track = [...keywords, ...keywords];
 export default function SEOKeywordsMarquee() {
   return (
     <section
-      aria-label="SEO keywords"
       style={{
         width: '100%',
         overflow: 'hidden',

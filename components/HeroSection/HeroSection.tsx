@@ -81,6 +81,7 @@ const HeroSection: React.FC = () => {
           preload="metadata"
           className={styles.video}
           aria-hidden="true"
+          tabIndex={-1}
         />
         {/* Black-and-white overlay only — no blur, no gradient, no extra color filters, no opacity tint */}
         <div className={styles.bwOverlay} />
